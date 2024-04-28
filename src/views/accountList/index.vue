@@ -103,6 +103,7 @@ const handleUpdateStatus = (row:{id:number,status:number}) => {
     await updateUserStatus(data)
     ElMessage.success(`${row.status === 1 ? '禁用' : '启用'}成功`)
     await currentChange(1)
+
   })
 }
 </script>
