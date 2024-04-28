@@ -6,7 +6,7 @@
       </el-form-item>
       <el-form-item prop="username">
         <el-input
-            v-model.trim="loginForm.user"
+            v-model.trim="loginForm.username"
             placeholder="请输入用户名"
         >
           <template #prefix>
@@ -16,7 +16,7 @@
       </el-form-item>
       <el-form-item prop="password">
         <el-input
-            v-model.trim="loginForm.pwd"
+            v-model.trim="loginForm.password"
             type="password"
             show-password
             placeholder="请输入密码"
@@ -43,12 +43,12 @@ import {useRouter}  from "vue-router";
 const router = useRouter()
 const {login} = useStore()
 const loginForm = ref<loginType>({
-  user: '',
-  pwd: ''
+  username: '',
+  password: ''
 })
 const submit = async () => {
   const res = await login.loginAction(loginForm.value)
-  if (res.status.code === 200) {
+  if (res.code === 200) {
     ElMessage.success('登录成功')
     await router.push('/')
   }
@@ -63,6 +63,7 @@ const submit = async () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #999;
   background-size: cover;
   overflow: hidden;
 

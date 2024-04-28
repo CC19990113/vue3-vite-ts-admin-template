@@ -24,7 +24,7 @@ service.interceptors.response.use(
     async (response:AxiosResponse) => {
         const res = response.data
         // token过期+
-        if (res.status.code == 202) {
+        if (res.code == 202) {
             // 清除token
             removeToken()
             removeName()
@@ -33,7 +33,7 @@ service.interceptors.response.use(
             return
         }
         // 约定成功code 为200
-        if (res.status.code != 200) {
+        if (res.code != 200) {
             ElMessage({
                 message: res.data || 'Error',
                 type: 'error',

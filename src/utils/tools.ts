@@ -83,3 +83,15 @@ export function getPageTitle(pageTitle?: any) {
     }
     return `新`
 }
+
+export const changeStatus=(status:any, type:string)=>{
+    if(typeof status[type] === 'string'){
+        status[type] = status[type] === '1' ? '0' : '1'
+    }
+    if(typeof status[type] === 'number'){
+        status[type] = status[type] === 1 ? 0 : 1
+    }
+    if(typeof status[type] === 'boolean'){
+        status[type] = status[type] !== true
+    }
+}

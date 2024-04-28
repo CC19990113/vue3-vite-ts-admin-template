@@ -5,8 +5,8 @@ interface State {
     token: string | null
 }
 export interface loginType{
-    user:string,
-    pwd:string
+    username:string,
+    password:string
 }
 const useLoginStore = defineStore('login', {
     state: (): State => {
@@ -19,6 +19,7 @@ const useLoginStore = defineStore('login', {
         // 登录操作
         async loginAction(data:loginType) {
             const res = await login(data)
+            console.log(res)
             setToken(res.data.token)
             return res
         }

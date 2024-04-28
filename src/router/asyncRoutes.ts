@@ -15,6 +15,12 @@ const asyncRoutes: Array<RouteRecordRaw> = [
         },
         children: [
             {
+                path: '/operation/accountList',
+                component: () => import('@/views/accountList/index.vue'),
+                name: '用户账号管理',
+                meta: { title: '用户账号管理', icon: 'HelpFilled', hidden: false, breadcrumb: true }
+            },
+            {
                 path: '/operation/menuManagement',
                 component: () => import('@/views/menuManagement/index.vue'),
                 name: '菜单管理',

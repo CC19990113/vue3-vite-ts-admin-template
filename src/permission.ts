@@ -10,7 +10,7 @@ NProgress.configure({showSpinner: false}) // NProgress Configuration
 
 router.beforeEach(async (to, _from, next) => {
     NProgress.start()
-    let roleList: string[] = ['/home','/operation/loginLog','/user/userNoticeList']
+    let roleList: string[] = ['/home','/operation/loginLog','/user/userNoticeList','/operation/accountList']
     function getMenu(router: any[]) {
         router.forEach(item => {
             // 没有子路由并且没有权限
