@@ -24,7 +24,7 @@ service.interceptors.response.use(
     async (response:AxiosResponse) => {
         const res = response.data
         // token过期+
-        if (res.code == 202) {
+        if (res.code == 201) {
             // 清除token
             removeToken()
             removeName()

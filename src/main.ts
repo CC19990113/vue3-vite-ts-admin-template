@@ -17,6 +17,7 @@ import { createPinia } from 'pinia'
 import router from './router/index.ts'
 import './permission.ts'
 
+import i18n from './locales/i18n.ts'
 
 const app = createApp(App)
 
@@ -27,6 +28,7 @@ app.use(ElementPlus, {locale: zhCn})
 
 app.use(createPinia())
 
+app.use(i18n)
 
 app.use(router)
 

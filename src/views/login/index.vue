@@ -2,7 +2,7 @@
   <div class="box">
     <el-form :model="loginForm" class="login-form">
       <el-form-item>
-        <h3 class="title">后台</h3>
+        <h3 class="title">{{ $t("hello") }}</h3>
       </el-form-item>
       <el-form-item prop="username">
         <el-input
@@ -46,6 +46,9 @@ const loginForm = ref<loginType>({
   username: '',
   password: ''
 })
+
+
+
 const submit = async () => {
   const res = await login.loginAction(loginForm.value)
   if (res.code === 200) {
